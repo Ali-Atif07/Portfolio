@@ -1,0 +1,1204 @@
+:root {
+    --ink: #0a0a0f;
+    --paper: #f0ebe0;
+    --paper2: #e8e0cc;
+    --red: #c8102e;
+    --red2: #8b0a1e;
+    --blue: #1a237e;
+    --gold: #d4a017;
+    --white: #fafaf5;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0
+}
+
+html {
+    scroll-behavior: smooth
+}
+
+body {
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Noto Sans JP', sans-serif;
+    overflow-x: hidden;
+    cursor: crosshair
+}
+
+body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: radial-gradient(circle, #00000008 1px, transparent 1px);
+    background-size: 6px 6px;
+    pointer-events: none;
+    z-index: 0
+}
+
+.speed-lines {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: 0;
+    overflow: hidden;
+    opacity: 0.03
+}
+
+.speed-lines::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300vmax;
+    height: 300vmax;
+    transform: translate(-50%, -50%);
+    background: repeating-conic-gradient(from 0deg, #000 0deg 0.3deg, transparent 0.3deg 2deg)
+}
+
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+    height: 56px;
+    background: var(--ink);
+    border-bottom: 3px solid var(--red)
+}
+
+.nav-logo {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    color: var(--white);
+    letter-spacing: 4px;
+    text-decoration: none
+}
+
+.nav-logo span {
+    color: var(--red)
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none
+}
+
+.nav-links a {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--paper);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 4px 0;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s, color 0.2s
+}
+
+.nav-links a:hover {
+    color: var(--red);
+    border-color: var(--red)
+}
+
+/* HERO */
+#hero {
+    min-height: 100vh;
+    padding-top: 56px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    position: relative;
+    overflow: hidden
+}
+
+.hero-left {
+    padding: 4rem 3rem 4rem 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-right: 3px solid var(--ink);
+    position: relative;
+    z-index: 1
+}
+
+.hero-left::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    right: -3px;
+    width: 60px;
+    height: 100%;
+    background: var(--red);
+    clip-path: polygon(100% 0, 100% 100%, 0 100%);
+    z-index: 2
+}
+
+.hero-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    letter-spacing: 3px;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem
+}
+
+.hero-tag::before {
+    content: '▶';
+    font-size: 0.5rem
+}
+
+.hero-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(3.5rem, 8vw, 7rem);
+    line-height: 0.9;
+    color: var(--ink);
+    letter-spacing: 2px;
+    margin-bottom: 0.5rem
+}
+
+.hero-name .highlight {
+    color: var(--red);
+    -webkit-text-stroke: 2px var(--ink);
+    display: block
+}
+
+.hero-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.1rem;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.6;
+    margin-bottom: 2rem;
+    border-left: 4px solid var(--red);
+    padding-left: 1rem
+}
+
+.hero-desc {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--ink);
+    opacity: 0.8;
+    max-width: 420px;
+    margin-bottom: 2.5rem
+}
+
+.hero-stats {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 2.5rem
+}
+
+.stat {
+    text-align: center;
+    padding: 0.75rem 1rem;
+    background: var(--ink);
+    color: var(--white);
+    position: relative
+}
+
+.stat::after {
+    content: '';
+    position: absolute;
+    bottom: -4px;
+    right: -4px;
+    width: 100%;
+    height: 100%;
+    border: 2px solid var(--red);
+    z-index: -1
+}
+
+.stat-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 2rem;
+    color: var(--red);
+    display: block;
+    line-height: 1
+}
+
+.stat-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.7
+}
+
+.hero-cta {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap
+}
+
+.btn {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.85rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    padding: 0.75rem 1.75rem;
+    text-decoration: none;
+    border: 3px solid var(--ink);
+    position: relative;
+    transition: transform 0.15s;
+    display: inline-block
+}
+
+.btn::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    right: -5px;
+    width: 100%;
+    height: 100%;
+    background: var(--ink);
+    z-index: -1;
+    transition: transform 0.15s
+}
+
+.btn:hover {
+    transform: translate(-3px, -3px)
+}
+
+.btn:hover::after {
+    transform: translate(3px, 3px)
+}
+
+.btn-primary {
+    background: var(--red);
+    color: var(--white);
+    border-color: var(--red)
+}
+
+.btn-primary::after {
+    background: var(--red2)
+}
+
+.btn-secondary {
+    background: transparent;
+    color: var(--ink)
+}
+
+/* HERO RIGHT — manga battle art */
+.hero-right {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--ink);
+    overflow: hidden
+}
+
+.hero-right::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: repeating-linear-gradient(45deg, transparent, transparent 10px, rgba(255, 255, 255, 0.02) 10px, rgba(255, 255, 255, 0.02) 20px)
+}
+
+/* battle image as atmospheric bg */
+.battle-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center top;
+    opacity: 0.55;
+    mix-blend-mode: luminosity;
+    filter: contrast(1.3) saturate(0.2)
+}
+
+.battle-vignette {
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at center, transparent 20%, rgba(10, 10, 15, 0.85) 100%);
+    z-index: 1
+}
+
+.battle-red-tint {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, rgba(200, 16, 46, 0.25) 0%, transparent 60%);
+    z-index: 2
+}
+
+.kanji-big {
+    font-family: 'Noto Sans JP', sans-serif;
+    font-weight: 900;
+    font-size: clamp(5rem, 12vw, 11rem);
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(200, 16, 46, 0.4);
+    line-height: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    white-space: nowrap;
+    user-select: none;
+    z-index: 3
+}
+
+.hero-art {
+    position: relative;
+    z-index: 4;
+    text-align: center;
+    padding: 3rem
+}
+
+.hero-badge-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    position: relative;
+    z-index: 3
+}
+
+.hero-badge {
+    background: rgba(240, 235, 224, 0.9);
+    border: 2px solid rgba(240, 235, 224, 0.5);
+    padding: 1rem;
+    position: relative;
+    backdrop-filter: blur(4px)
+}
+
+.hero-badge::before {
+    content: attr(data-num);
+    position: absolute;
+    top: -12px;
+    left: 8px;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.7rem;
+    background: var(--red);
+    color: var(--white);
+    padding: 1px 6px;
+    letter-spacing: 2px
+}
+
+.badge-icon {
+    font-size: 1.4rem;
+    display: block;
+    margin-bottom: 0.4rem
+}
+
+.badge-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    color: var(--ink);
+    opacity: 0.8
+}
+
+.badge-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: var(--red);
+    display: block;
+    letter-spacing: 2px
+}
+
+/* BATTLE CAPTION — manga panel text box */
+.battle-caption {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 5;
+    background: var(--paper);
+    border: 3px solid var(--ink);
+    padding: 0.6rem 1.2rem;
+    box-shadow: 4px 4px 0 var(--red);
+    white-space: nowrap
+}
+
+.battle-caption-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    color: var(--ink)
+}
+
+.battle-caption-text span {
+    color: var(--red)
+}
+
+/* SFX text layered in hero-right */
+.sfx {
+    position: absolute;
+    font-family: 'Bebas Neue', sans-serif;
+    user-select: none;
+    pointer-events: none;
+    z-index: 3;
+    color: transparent;
+    -webkit-text-stroke: 1px
+}
+
+.sfx-1 {
+    font-size: 5rem;
+    top: 10%;
+    right: 5%;
+    -webkit-text-stroke-color: rgba(200, 16, 46, 0.35);
+    transform: rotate(15deg)
+}
+
+.sfx-2 {
+    font-size: 3rem;
+    bottom: 25%;
+    left: 5%;
+    -webkit-text-stroke-color: rgba(200, 16, 46, 0.2);
+    transform: rotate(-8deg)
+}
+
+section {
+    position: relative;
+    z-index: 1
+}
+
+.section-header {
+    display: flex;
+    align-items: flex-end;
+    gap: 1.5rem;
+    margin-bottom: 3rem;
+    padding-bottom: 1rem;
+    border-bottom: 3px solid var(--ink)
+}
+
+.section-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 5rem;
+    line-height: 1;
+    color: transparent;
+    -webkit-text-stroke: 2px var(--ink);
+    opacity: 0.15;
+    flex-shrink: 0
+}
+
+.section-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    letter-spacing: 4px;
+    color: var(--ink);
+    line-height: 1
+}
+
+.section-title span {
+    color: var(--red)
+}
+
+/* EXPERIENCE */
+#experience {
+    padding: 6rem 4rem;
+    background: var(--ink);
+    color: var(--white)
+}
+
+#experience .section-title {
+    color: var(--white)
+}
+
+#experience .section-num {
+    -webkit-text-stroke-color: var(--white)
+}
+
+#experience .section-header {
+    border-color: var(--red)
+}
+
+.exp-card {
+    border: 2px solid rgba(255, 255, 255, 0.15);
+    padding: 2rem;
+    position: relative;
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: border-color 0.2s
+}
+
+.exp-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--red)
+}
+
+.exp-card:hover {
+    border-color: var(--red)
+}
+
+.exp-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    flex-wrap: wrap;
+    gap: 0.5rem
+}
+
+.exp-role {
+    font-family: 'Oswald', sans-serif;
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white)
+}
+
+.exp-company {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.8rem;
+    color: var(--red);
+    letter-spacing: 1px;
+    margin-top: 0.2rem
+}
+
+.exp-date {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.7rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    white-space: nowrap
+}
+
+.exp-card ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem
+}
+
+.exp-card li {
+    font-size: 0.85rem;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.75);
+    padding-left: 1.2rem;
+    position: relative
+}
+
+.exp-card li::before {
+    content: '◆';
+    position: absolute;
+    left: 0;
+    color: var(--red);
+    font-size: 0.5rem;
+    top: 0.3rem
+}
+
+/* PROJECTS */
+#projects {
+    padding: 6rem 4rem;
+    background: var(--paper)
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+    gap: 2rem
+}
+
+.project-card {
+    border: 3px solid var(--ink);
+    background: var(--white);
+    position: relative;
+    overflow: hidden;
+    transition: transform 0.2s;
+    box-shadow: 5px 5px 0 var(--ink)
+}
+
+.project-card:hover {
+    transform: translate(-3px, -3px);
+    box-shadow: 8px 8px 0 var(--ink)
+}
+
+.project-card.featured {
+    grid-column: span 2
+}
+
+.project-tag-bar {
+    background: var(--ink);
+    padding: 0.5rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+}
+
+.project-tag-bar .p-num {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 0.75rem;
+    color: var(--red);
+    letter-spacing: 3px
+}
+
+.project-tag-bar .p-type {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 2px;
+    text-transform: uppercase
+}
+
+.project-body {
+    padding: 1.5rem
+}
+
+.project-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: var(--ink);
+    margin-bottom: 0.25rem;
+    line-height: 1
+}
+
+.project-sub {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--red);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 1rem
+}
+
+.project-desc {
+    font-size: 0.82rem;
+    line-height: 1.7;
+    color: var(--ink);
+    opacity: 0.8;
+    margin-bottom: 1.25rem
+}
+
+.project-bullets {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem
+}
+
+.project-bullets li {
+    font-size: 0.78rem;
+    line-height: 1.5;
+    color: var(--ink);
+    opacity: 0.75;
+    padding-left: 1rem;
+    position: relative
+}
+
+.project-bullets li::before {
+    content: '▸';
+    position: absolute;
+    left: 0;
+    color: var(--red)
+}
+
+.project-stack {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-bottom: 1.25rem
+}
+
+.stack-tag {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    padding: 2px 8px;
+    border: 1.5px solid var(--ink);
+    text-transform: uppercase;
+    color: var(--ink)
+}
+
+.stack-tag.red {
+    border-color: var(--red);
+    color: var(--red)
+}
+
+.project-link {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    color: var(--white);
+    background: var(--ink);
+    padding: 0.5rem 1rem;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    border: 2px solid var(--ink);
+    transition: background 0.15s, color 0.15s
+}
+
+.project-link:hover {
+    background: var(--red);
+    border-color: var(--red)
+}
+
+.project-link+.project-link {
+    margin-left: 0.5rem;
+    background: transparent;
+    color: var(--ink)
+}
+
+.project-link+.project-link:hover {
+    background: var(--red);
+    color: var(--white);
+    border-color: var(--red)
+}
+
+/* SKILLS */
+#skills {
+    padding: 6rem 4rem;
+    background: var(--paper2);
+    border-top: 3px solid var(--ink);
+    border-bottom: 3px solid var(--ink)
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem
+}
+
+.skill-category {
+    border: 2px solid var(--ink);
+    background: var(--white);
+    padding: 1.5rem;
+    position: relative;
+    box-shadow: 4px 4px 0 var(--ink)
+}
+
+.skill-cat-title {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1rem;
+    letter-spacing: 4px;
+    color: var(--red);
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1.5px solid var(--ink)
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem
+}
+
+.skill-pill {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 1px;
+    padding: 3px 8px;
+    border: 1.5px solid var(--ink);
+    text-transform: uppercase;
+    background: var(--paper);
+    color: var(--ink);
+    transition: background 0.15s, color 0.15s;
+    cursor: default
+}
+
+.skill-pill:hover {
+    background: var(--ink);
+    color: var(--white)
+}
+
+.skill-pill.hot {
+    border-color: var(--red);
+    color: var(--red);
+    background: rgba(200, 16, 46, 0.05)
+}
+
+.skill-pill.hot:hover {
+    background: var(--red);
+    color: var(--white)
+}
+
+/* ACHIEVEMENTS */
+#achievements {
+    padding: 5rem 4rem;
+    background: var(--ink);
+    color: var(--white)
+}
+
+#achievements .section-title {
+    color: var(--white)
+}
+
+#achievements .section-num {
+    -webkit-text-stroke-color: rgba(255, 255, 255, 0.2)
+}
+
+#achievements .section-header {
+    border-color: var(--red)
+}
+
+.ach-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.5rem
+}
+
+.ach-card {
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    padding: 1.5rem;
+    position: relative;
+    transition: border-color 0.2s, transform 0.2s
+}
+
+.ach-card:hover {
+    border-color: var(--red);
+    transform: translateY(-4px)
+}
+
+.ach-icon {
+    font-size: 1.8rem;
+    display: block;
+    margin-bottom: 0.75rem
+}
+
+.ach-title {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.95rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--white);
+    margin-bottom: 0.3rem
+}
+
+.ach-desc {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.4);
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    line-height: 1.5
+}
+
+.ach-val {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.5rem;
+    color: var(--red);
+    display: block;
+    margin-top: 0.5rem;
+    letter-spacing: 2px
+}
+
+/* CONTACT */
+#contact {
+    padding: 6rem 4rem;
+    background: var(--paper);
+    position: relative;
+    overflow: hidden
+}
+
+#contact::before {
+    content: 'CONNECT';
+    position: absolute;
+    bottom: -2rem;
+    right: -1rem;
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 12rem;
+    color: transparent;
+    -webkit-text-stroke: 2px rgba(0, 0, 0, 0.05);
+    pointer-events: none;
+    white-space: nowrap;
+    user-select: none
+}
+
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: start
+}
+
+.contact-text .big-text {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4.5rem);
+    line-height: 1;
+    color: var(--ink);
+    margin-bottom: 1.5rem;
+    letter-spacing: 2px
+}
+
+.contact-text .big-text span {
+    color: var(--red)
+}
+
+.contact-text p {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: var(--ink);
+    opacity: 0.7;
+    margin-bottom: 2rem;
+    max-width: 380px
+}
+
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem
+}
+
+.contact-link {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem 1.25rem;
+    border: 2px solid var(--ink);
+    text-decoration: none;
+    color: var(--ink);
+    background: var(--white);
+    transition: transform 0.15s, background 0.15s, color 0.15s;
+    box-shadow: 3px 3px 0 var(--ink);
+    position: relative
+}
+
+.contact-link:hover {
+    background: var(--ink);
+    color: var(--white);
+    transform: translate(-2px, -2px);
+    box-shadow: 5px 5px 0 var(--red)
+}
+
+.cl-icon {
+    font-size: 1.2rem;
+    flex-shrink: 0
+}
+
+.cl-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.5;
+    display: block
+}
+
+.cl-val {
+    font-family: 'Oswald', sans-serif;
+    font-size: 0.9rem;
+    letter-spacing: 1px;
+    display: block
+}
+
+footer {
+    background: var(--red);
+    padding: 1.5rem 4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 3px solid var(--red2)
+}
+
+.footer-text {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: rgba(255, 255, 255, 0.7);
+    letter-spacing: 2px;
+    text-transform: uppercase
+}
+
+.footer-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.2rem;
+    color: var(--white);
+    letter-spacing: 4px
+}
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.6s ease, transform 0.6s ease
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0)
+}
+
+.flash {
+    animation: flashpanel 0.3s ease
+}
+
+@keyframes flashpanel {
+    0% {
+        background: rgba(200, 16, 46, 0.2)
+    }
+
+    100% {
+        background: transparent
+    }
+}
+
+.cursor-dot {
+    width: 8px;
+    height: 8px;
+    background: var(--red);
+    border-radius: 50%;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9999;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s
+}
+
+.cursor-ring {
+    width: 32px;
+    height: 32px;
+    border: 2px solid var(--red);
+    border-radius: 0;
+    position: fixed;
+    pointer-events: none;
+    z-index: 9998;
+    transform: translate(-50%, -50%);
+    transition: width 0.2s, height 0.2s
+}
+
+/* EDUCATION SECTION */
+#education {
+    padding: 5rem 4rem;
+    background: var(--paper)
+}
+
+.edu-card {
+    border: 3px solid var(--ink);
+    background: var(--white);
+    padding: 2rem;
+    box-shadow: 6px 6px 0 var(--ink);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 2rem
+}
+
+.edu-school {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 1.6rem;
+    letter-spacing: 2px;
+    color: var(--ink);
+    line-height: 1;
+    margin-bottom: 0.3rem
+}
+
+.edu-degree {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--red);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem
+}
+
+.edu-loc {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.65rem;
+    color: var(--ink);
+    opacity: 0.5;
+    letter-spacing: 1px
+}
+
+.edu-gpa {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 3rem;
+    color: var(--red);
+    line-height: 1;
+    text-align: right
+}
+
+.edu-gpa-label {
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 2px;
+    color: var(--ink);
+    opacity: 0.5;
+    text-transform: uppercase;
+    text-align: right;
+    display: block
+}
+
+@media(max-width:900px) {
+    #hero {
+        grid-template-columns: 1fr
+    }
+
+    .hero-right {
+        display: none
+    }
+
+    .hero-left::after {
+        display: none
+    }
+
+    .hero-left {
+        border-right: none;
+        padding: 3rem 2rem
+    }
+
+    #experience,
+    #projects,
+    #skills,
+    #achievements,
+    #contact,
+    #education {
+        padding: 4rem 2rem
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: 2rem
+    }
+
+    .project-card.featured {
+        grid-column: span 1
+    }
+
+    .edu-card {
+        grid-template-columns: 1fr
+    }
+
+    .edu-gpa,
+    .edu-gpa-label {
+        text-align: left
+    }
+
+    nav {
+        padding: 0 1.5rem
+    }
+
+    .nav-links {
+        gap: 1rem
+    }
+
+    footer {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        padding: 1.5rem 2rem
+    }
+}
+
+@media(max-width:600px) {
+    .nav-links {
+        display: none
+    }
+
+    .hero-stats {
+        gap: 1rem
+    }
+
+    .section-title {
+        font-size: 2rem
+    }
+}

@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mohammed Ali Atif — AI Engineer</title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Noto+Sans+JP:wght@400;700;900&family=Share+Tech+Mono&family=Oswald:wght@700&display=swap"
+        rel="stylesheet" />
+
+    <link rel="stylesheet" href="./style.css">
+
+</head>
+
+<body>
+    <div class="speed-lines"></div>
+    <div class="cursor-dot" id="dot"></div>
+    <div class="cursor-ring" id="ring"></div>
+
+    <nav>
+        <a class="nav-logo" href="#hero">ALI<span>.</span>ATIF</a>
+        <ul class="nav-links">
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </nav>
+
+    <section id="hero">
+        <div class="hero-left">
+            <div class="hero-tag">Chapter 01 — Origin</div>
+            <h1 class="hero-name">Mohammed<br>Ali<span class="highlight">Atif</span></h1>
+            <p class="hero-title">Applied AI Engineer · Full-Stack</p>
+            <p class="hero-desc">Building production AI systems from the ground up — not wrappers, not tutorials. RAG
+                pipelines, LLM integrations, and transformers trained from scratch. Every line ships to production.</p>
+            <div class="hero-stats">
+                <div class="stat"><span class="stat-num">50M</span><span class="stat-label">Model Params</span></div>
+                <div class="stat"><span class="stat-num">98K</span><span class="stat-label">Train Steps</span></div>
+                <div class="stat"><span class="stat-num">443+</span><span class="stat-label">LeetCode</span></div>
+            </div>
+            <div class="hero-cta">
+                <a href="mailto:mohammedaliaatif77@gmail.com" class="btn btn-primary">Contact Me</a>
+            </div>
+        </div>
+
+        <div class="hero-right">
+            <div class="battle-bg" id="battleBg"></div>
+            <div class="battle-vignette"></div>
+            <div class="battle-red-tint"></div>
+            <div class="sfx sfx-1">DEPLOY</div>
+            <div class="sfx sfx-2">BUILD</div>
+            <div class="kanji-big">AI</div>
+            <div class="hero-art">
+                <div class="hero-badge-grid">
+                    <div class="hero-badge" data-num="TECH · 01"><span class="badge-icon">⚡</span><span
+                            class="badge-text">Framework</span><span class="badge-val">PyTorch</span></div>
+                    <div class="hero-badge" data-num="TECH · 02"><span class="badge-icon">🧠</span><span
+                            class="badge-text">Specialty</span><span class="badge-val">LLMs / RAG</span></div>
+                    <div class="hero-badge" data-num="TECH · 03"><span class="badge-icon">🔥</span><span
+                            class="badge-text">Val Loss</span><span class="badge-val">1.80</span></div>
+                    <div class="hero-badge" data-num="TECH · 04"><span class="badge-icon">🚀</span><span
+                            class="badge-text">Status</span><span class="badge-val">Open</span></div>
+                </div>
+            </div>
+            <div class="battle-caption"><span class="battle-caption-text">LEVEL UP · <span>SHIP TO PROD</span></span>
+            </div>
+        </div>
+    </section>
+
+    <section id="experience">
+        <div class="section-header reveal"><span class="section-num">02</span>
+            <h2 class="section-title">Experi<span>ence</span></h2>
+        </div>
+        <div class="exp-card reveal">
+            <div class="exp-header">
+                <div>
+                    <div class="exp-role">AI Engineering Intern</div>
+                    <div class="exp-company">Grras Solutions Pvt. Ltd.</div>
+                </div>
+                <div class="exp-date">Jun 2025 — Aug 2025</div>
+            </div>
+            <ul>
+                <li>Integrated Gemini LLM into production tools — prompt engineering, response parsing, error handling
+                    at scale.</li>
+                <li>Reduced API latency by ~20% through query profiling, N+1 elimination, and targeted caching
+                    strategies.</li>
+                <li>Shipped AI-assisted modules used by real clients in production environments.</li>
+            </ul>
+        </div>
+        <div class="exp-card reveal">
+            <div class="exp-header">
+                <div>
+                    <div class="exp-role">Open Source Contributor</div>
+                    <div class="exp-company">Twenty CRM — 25,000+ GitHub Stars</div>
+                </div>
+                <div class="exp-date">2024 — Present</div>
+            </div>
+            <ul>
+                <li>Submitted PR across a production-scale React + TypeScript + NestJS monorepo — modern open-source
+                    Salesforce alternative.</li>
+            </ul>
+        </div>
+    </section>
+
+    <section id="projects">
+        <div class="section-header reveal"><span class="section-num">03</span>
+            <h2 class="section-title">Pro<span>jects</span></h2>
+        </div>
+        <div class="projects-grid">
+            <div class="project-card featured reveal">
+                <div class="project-tag-bar"><span class="p-num">PROJECT · 01</span><span class="p-type">AI / Deep
+                        Learning · Live</span></div>
+                <div class="project-body">
+                    <div class="project-name">MiniGPT</div>
+                    <div class="project-sub">GPT-Style LLM — Built From Scratch</div>
+                    <p class="project-desc">Full transformer architecture implemented in raw PyTorch — zero pretrained
+                        weights, zero copied code. Multi-head self-attention, causal masking, positional embeddings,
+                        GELU FFN — all written by hand. Trained 98,000 steps with mixed precision and cosine LR
+                        scheduling.</p>
+                    <ul class="project-bullets">
+                        <li>50M parameter model · Val loss 1.80 · GPT-2 BPE tokenizer (50,257 vocab)</li>
+                        <li>Multi-session checkpoint resumption on free Kaggle GPU across 6+ training sessions</li>
+                        <li>Deployed as live web app with temperature + top-k sampling controls</li>
+                    </ul>
+                    <div class="project-stack"><span class="stack-tag red">PyTorch</span><span
+                            class="stack-tag red">HuggingFace</span><span class="stack-tag">Streamlit</span><span
+                            class="stack-tag">Kaggle GPU</span><span class="stack-tag">Mixed Precision</span></div>
+                    <a href="https://minigpt-98.streamlit.app" target="_blank" class="project-link">Live Demo ↗</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-tag-bar"><span class="p-num">PROJECT · 02</span><span class="p-type">Full-Stack ·
+                        Production</span></div>
+                <div class="project-body">
+                    <div class="project-name">Afflixor</div>
+                    <div class="project-sub">AI Affiliate Discovery Platform</div>
+                    <p class="project-desc">Production full-stack marketplace with hybrid AI recommendation engine —
+                        vector similarity + LLM reasoning, live with real users.</p>
+                    <ul class="project-bullets">
+                        <li>HuggingFace embeddings + Qdrant for semantic retrieval; Groq LLaMA-3.1 for per-product
+                            buying reasoning at &lt;200ms</li>
+                        <li>L1+L2 caching: LRU in-memory + Upstash Redis — DB queries 30 → 0 on warm cache</li>
+                        <li>500+ concurrent users on free-tier infrastructure</li>
+                    </ul>
+                    <div class="project-stack"><span class="stack-tag red">Next.js 14</span><span
+                            class="stack-tag red">Groq</span><span class="stack-tag">Node.js</span><span
+                            class="stack-tag">PostgreSQL</span><span class="stack-tag">Redis</span><span
+                            class="stack-tag">Qdrant</span></div>
+                    <a href="https://afflixor.vercel.app" target="_blank" class="project-link">View Live ↗</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-tag-bar"><span class="p-num">PROJECT · 03</span><span class="p-type">Backend ·
+                        AI</span></div>
+                <div class="project-body">
+                    <div class="project-name">Enterprise AI</div>
+                    <div class="project-sub">Decision & Automation Platform</div>
+                    <p class="project-desc">Modular FastAPI backend with RAG pipelines for context-aware AI responses
+                        over enterprise knowledge bases.</p>
+                    <ul class="project-bullets">
+                        <li>ChromaDB vector store integration for semantic retrieval</li>
+                        <li>Provider-agnostic adapter pattern for multi-step AI workflows</li>
+                    </ul>
+                    <div class="project-stack"><span class="stack-tag red">FastAPI</span><span
+                            class="stack-tag red">RAG</span><span class="stack-tag">ChromaDB</span><span
+                            class="stack-tag">LangChain</span><span class="stack-tag">Python</span></div>
+                    <a href="https://github.com/Ali-Atif07/Enterprise-AI-Assistant" target="_blank"
+                        class="project-link">GitHub ↗</a>
+                </div>
+            </div>
+            <div class="project-card reveal">
+                <div class="project-tag-bar"><span class="p-num">PROJECT · 04</span><span class="p-type">Plugin ·
+                        WordPress.org</span></div>
+                <div class="project-body">
+                    <div class="project-name">AutoCatalog AI</div>
+                    <div class="project-sub">WooCommerce AI Content Generator</div>
+                    <p class="project-desc">WordPress plugin submitted to WordPress.org — generates product content via
+                        Claude, GPT-4, Gemini, and LLaMA with BYOK model selection.</p>
+                    <ul class="project-bullets">
+                        <li>Provider-agnostic adapter: new LLM = one class, ~70% less integration time</li>
+                        <li>12 sub-models across 4 providers; custom prompt editor per product type</li>
+                    </ul>
+                    <div class="project-stack"><span class="stack-tag red">PHP</span><span
+                            class="stack-tag">WordPress</span><span class="stack-tag">WooCommerce</span><span
+                            class="stack-tag">LLM APIs</span></div>
+                    <a href="https://github.com/Ali-Atif07/autocatalog-ai" target="_blank" class="project-link">GitHub
+                        ↗</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills">
+        <div class="section-header reveal"><span class="section-num">04</span>
+            <h2 class="section-title">Sk<span>ills</span></h2>
+        </div>
+        <div class="skills-grid">
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">AI / ML</div>
+                <div class="skill-tags">
+                    <span class="skill-pill hot">PyTorch</span><span class="skill-pill hot">LangChain</span><span
+                        class="skill-pill hot">RAG</span><span class="skill-pill hot">HuggingFace</span><span
+                        class="skill-pill">ChromaDB</span><span class="skill-pill">Qdrant</span><span
+                        class="skill-pill">n8n</span><span class="skill-pill">Prompt Engineering</span><span
+                        class="skill-pill">NLP</span><span class="skill-pill">LLM APIs</span>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">Backend & APIs</div>
+                <div class="skill-tags">
+                    <span class="skill-pill hot">FastAPI</span><span class="skill-pill hot">Node.js</span><span
+                        class="skill-pill">Express</span><span class="skill-pill">REST</span><span
+                        class="skill-pill">WebSockets</span><span class="skill-pill">PHP</span><span
+                        class="skill-pill">WordPress</span><span class="skill-pill">WooCommerce</span>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">Frontend</div>
+                <div class="skill-tags">
+                    <span class="skill-pill hot">Next.js</span><span class="skill-pill hot">React</span><span
+                        class="skill-pill">TypeScript</span><span class="skill-pill">Flutter</span><span
+                        class="skill-pill">Tailwind CSS</span><span class="skill-pill">Zustand</span><span
+                        class="skill-pill">TanStack Query</span>
+                </div>
+            </div>
+            <div class="skill-category reveal">
+                <div class="skill-cat-title">Databases & Cloud</div>
+                <div class="skill-tags">
+                    <span class="skill-pill hot">PostgreSQL</span><span class="skill-pill hot">Redis</span><span
+                        class="skill-pill">MongoDB</span><span class="skill-pill">Prisma</span><span
+                        class="skill-pill">Docker</span><span class="skill-pill">Vercel</span><span
+                        class="skill-pill">Railway</span><span class="skill-pill">DigitalOcean</span><span
+                        class="skill-pill">Firebase</span><span class="skill-pill">Supabase</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="achievements">
+        <div class="section-header reveal"><span class="section-num">05</span>
+            <h2 class="section-title">Achieve<span>ments</span></h2>
+        </div>
+        <div class="ach-row">
+            <div class="ach-card reveal"><span class="ach-icon">⚔️</span>
+                <div class="ach-title">LeetCode</div>
+                <div class="ach-desc">DSA problems solved<br>365-day streak badge</div><span class="ach-val">443+</span>
+            </div>
+            <div class="ach-card reveal"><span class="ach-icon">🏆</span>
+                <div class="ach-title">Smart India Hackathon</div>
+                <div class="ach-desc">Internal Round<br>2025</div><span class="ach-val">3rd Place</span>
+            </div>
+            <div class="ach-card reveal"><span class="ach-icon">☁️</span>
+                <div class="ach-title">AWS Cloud + AI</div>
+                <div class="ach-desc">LinuxWorld Certification<br>2025</div><span class="ach-val">Certified</span>
+            </div>
+            <div class="ach-card reveal"><span class="ach-icon">🤖</span>
+                <div class="ach-title">Generative AI</div>
+                <div class="ach-desc">Google Developer Group<br>Cloud Foundations 2024</div><span
+                    class="ach-val">Certified</span>
+            </div>
+            <div class="ach-card reveal"><span class="ach-icon">⭐</span>
+                <div class="ach-title">Open Source</div>
+                <div class="ach-desc">Twenty CRM<br>25k+ GitHub stars</div><span class="ach-val">Contributor</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="education">
+        <div class="section-header reveal"><span class="section-num">06</span>
+            <h2 class="section-title">Educa<span>tion</span></h2>
+        </div>
+        <div class="edu-card reveal">
+            <div>
+                <div class="edu-school">Geetanjali Institute of Technical Studies</div>
+                <div class="edu-degree">B.Tech — Computer Science (AI) · 2023 – 2027</div>
+                <div class="edu-loc">Udaipur, India</div>
+            </div>
+            <div>
+                <div class="edu-gpa">8.18</div>
+                <span class="edu-gpa-label">CGPA / 10</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="section-header reveal"><span class="section-num">07</span>
+            <h2 class="section-title">Con<span>tact</span></h2>
+        </div>
+        <div class="contact-grid">
+            <div class="contact-text reveal">
+                <div class="big-text">Let's Build<br><span>Something.</span></div>
+                <p>Open to AI engineering and SDE roles, remote internships, and interesting projects worldwide. If
+                    you're
+                    building something — let's talk.</p>
+                <a href="mailto:mohammedaliaatif77@gmail.com" class="btn btn-primary">Send Message</a>
+            </div>
+            <div class="contact-links reveal">
+                <a href="mailto:mohammedaliaatif77@gmail.com" class="contact-link"><span class="cl-icon">✉️</span>
+                    <div><span class="cl-label">Email</span><span class="cl-val">mohammedaliaatif77@gmail.com</span>
+                    </div>
+                </a>
+                <a href="https://www.linkedin.com/in/mohammed-ali-atif-54034b308" target="_blank"
+                    class="contact-link"><span class="cl-icon">💼</span>
+                    <div><span class="cl-label">LinkedIn</span><span class="cl-val">mohammed-ali-atif</span></div>
+                </a>
+                <a href="https://github.com/Ali-Atif07" target="_blank" class="contact-link"><span
+                        class="cl-icon">🐙</span>
+                    <div><span class="cl-label">GitHub</span><span class="cl-val">Ali-Atif07</span></div>
+                </a>
+                <a href="https://minigpt-98.streamlit.app" target="_blank" class="contact-link"><span
+                        class="cl-icon">🤖</span>
+                    <div><span class="cl-label">Live Project</span><span class="cl-val">minigpt-98.streamlit.app</span>
+                    </div>
+                </a>
+                <a href="https://afflixor.vercel.app" target="_blank" class="contact-link"><span
+                        class="cl-icon">⚡</span>
+                    <div><span class="cl-label">Production App</span><span class="cl-val">afflixor.vercel.app</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <span class="footer-text">© 2025 — All systems operational</span>
+        <span class="footer-name">Mohammed Ali Atif</span>
+    </footer>
+
+    <script>
+
+
+    </script>
+</body>
+
+</html>
